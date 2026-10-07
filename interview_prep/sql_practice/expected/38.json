@@ -1,0 +1,18 @@
+{
+ "columns": ["employee", "depth", "path"],
+ "rows": [
+  ["Alice", 0, "Alice"],
+  ["Bob", 1, "Alice > Bob"],
+  ["Carol", 2, "Alice > Bob > Carol"],
+  ["Eve", 3, "Alice > Bob > Carol > Eve"],
+  ["Frank", 3, "Alice > Bob > Carol > Frank"],
+  ["Dan", 2, "Alice > Bob > Dan"],
+  ["Grace", 1, "Alice > Grace"],
+  ["Heidi", 2, "Alice > Grace > Heidi"],
+  ["Judy", 3, "Alice > Grace > Heidi > Judy"],
+  ["Ivan", 2, "Alice > Grace > Ivan"],
+  ["Ken", 1, "Alice > Ken"],
+  ["Leo", 2, "Alice > Ken > Leo"],
+  ["Mia", 1, "Alice > Mia"]
+ ]
+}

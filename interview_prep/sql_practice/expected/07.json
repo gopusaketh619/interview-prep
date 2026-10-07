@@ -1,0 +1,6 @@
+{
+ "columns": ["dept_name", "avg_salary"],
+ "rows": [
+  ["Engineering", 160000.0]
+ ]
+}

@@ -1,0 +1,21 @@
+-- =============================================================================
+-- 45. Apply a CDC log to get current state                     Difficulty: Hard
+-- Topic: Data engineering (CDC)               Inspired by: Debezium / Fivetran / Snowflake Streams interview questions
+-- Tables: cdc_log                             Schema: python3 run.py --schema cdc
+-- =============================================================================
+-- cdc_log is a change stream from a source database. Each row is an insert (I), update (U), or
+-- delete (D) for one customer, and inserts/updates carry the full row image. Return the current
+-- state of the customer table after replaying the whole log.
+--
+-- Clarifications:
+--   * lsn (log sequence number) is the true order of changes. Rows were loaded out of order.
+--   * A customer can be deleted and later re-inserted.
+--   * Deleted customers must not appear.
+--
+-- Output columns: customer_id, email, tier
+-- Row order: any
+-- Check: python3 run.py 45
+-- =============================================================================
+
+-- YOUR SQL BELOW
+

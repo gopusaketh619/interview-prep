@@ -1,0 +1,10 @@
+{
+ "columns": ["check_name", "failed_count"],
+ "rows": [
+  ["duplicate_customer_id", 2],
+  ["null_customer_email", 3],
+  ["orphan_order_customer", 2],
+  ["null_order_customer", 1],
+  ["negative_order_amount", 1]
+ ]
+}

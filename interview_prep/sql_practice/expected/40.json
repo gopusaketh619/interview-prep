@@ -1,0 +1,7 @@
+{
+ "columns": ["product", "total_cost"],
+ "rows": [
+  ["Bike", 222.0],
+  ["Scooter", 142.0]
+ ]
+}

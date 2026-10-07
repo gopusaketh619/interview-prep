@@ -1,0 +1,11 @@
+{
+ "columns": ["category", "product", "revenue"],
+ "rows": [
+  ["Books", "Novel", 120.0],
+  ["Books", "Cookbook", 70.0],
+  ["Electronics", "Laptop", 4700.0],
+  ["Electronics", "Phone", 3150.0],
+  ["Furniture", "Desk", 1200.0],
+  ["Furniture", "Chair", 450.0]
+ ]
+}

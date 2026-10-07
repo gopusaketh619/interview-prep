@@ -1,0 +1,11 @@
+{
+ "columns": ["user_id", "has_overlap"],
+ "rows": [
+  [3, true],
+  [6, false],
+  [5, true],
+  [1, true],
+  [4, true],
+  [2, false]
+ ]
+}

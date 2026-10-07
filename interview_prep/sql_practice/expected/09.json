@@ -1,0 +1,8 @@
+{
+ "columns": ["post_bucket", "users_num"],
+ "rows": [
+  [1, 2],
+  [2, 1],
+  [3, 2]
+ ]
+}

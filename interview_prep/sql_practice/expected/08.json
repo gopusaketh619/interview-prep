@@ -1,0 +1,9 @@
+{
+ "columns": ["dept_name", "median_salary"],
+ "rows": [
+  ["Engineering", 150000.0],
+  ["Legal", 130000.0],
+  ["Marketing", 95000.0],
+  ["Sales", 95000.0]
+ ]
+}

@@ -1,0 +1,21 @@
+-- =============================================================================
+-- 06. Monthly transactions by country                          Difficulty: Medium
+-- Topic: Aggregation (conditional)            Inspired by: LeetCode 1193
+-- Tables: transactions                        Schema: python3 run.py --schema ecommerce
+-- =============================================================================
+-- For each month and country, report the number of transactions, the number approved, the total
+-- amount, and the total approved amount.
+--
+-- Clarifications:
+--   * month is a 'YYYY-MM' string.
+--   * A NULL country is its own group (do not drop it).
+--   * approved_total_amount is 0, not NULL, when nothing was approved.
+--
+-- Output columns: month, country, trans_count, approved_count, trans_total_amount,
+--                 approved_total_amount
+-- Row order: any
+-- Check: python3 run.py 6
+-- =============================================================================
+
+-- YOUR SQL BELOW
+

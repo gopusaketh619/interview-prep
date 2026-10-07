@@ -1,0 +1,21 @@
+-- =============================================================================
+-- 46. Build SCD Type 2 from daily snapshots                    Difficulty: Hard
+-- Topic: Data engineering (slowly changing dimensions)   Inspired by: Kimball SCD2, dbt snapshots, Airbnb/Netflix DE loops
+-- Tables: customer_snapshots                  Schema: python3 run.py --schema cdc
+-- =============================================================================
+-- customer_snapshots holds a full copy of each customer's tier every day. Convert it into an SCD
+-- Type 2 dimension: one row per contiguous version of a customer's tier.
+--
+-- Clarifications:
+--   * valid_from = first snapshot_date of the version.
+--   * valid_to   = valid_from of the customer's next version (exclusive end), or NULL if current.
+--   * is_current = TRUE only for each customer's latest version.
+--   * If a tier changes and later changes back (A -> B -> A), that is three versions.
+--
+-- Output columns: customer_id, tier, valid_from, valid_to, is_current
+-- Row order: any
+-- Check: python3 run.py 46
+-- =============================================================================
+
+-- YOUR SQL BELOW
+

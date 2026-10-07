@@ -1,0 +1,21 @@
+-- =============================================================================
+-- 18. 7-day rolling average with missing days                  Difficulty: Hard
+-- Topic: Window aggregates + date spine       Inspired by: DataLemur (Twitter) "Tweets' Rolling Averages"
+-- Tables: daily_sales                         Schema: python3 run.py --schema misc
+-- =============================================================================
+-- daily_sales has no row on days with no sales. For every calendar day from the first to the
+-- last sale_date, return that day's revenue and the 7-day rolling average revenue (the day
+-- itself plus the 6 calendar days before it).
+--
+-- Clarifications:
+--   * Days with no row count as 0 revenue and must appear in the output.
+--   * Days before the first sale_date do not exist, so the first 6 days average over fewer days.
+--   * Round rolling_7d_avg to 2 decimals.
+--
+-- Output columns: sale_date, revenue, rolling_7d_avg
+-- Row order: sale_date ascending
+-- Check: python3 run.py 18
+-- =============================================================================
+
+-- YOUR SQL BELOW
+

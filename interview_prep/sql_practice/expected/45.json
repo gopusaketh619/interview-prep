@@ -1,0 +1,8 @@
+{
+ "columns": ["customer_id", "email", "tier"],
+ "rows": [
+  [13, "x13b@a.com", "gold"],
+  [12, "x12new@a.com", "bronze"],
+  [10, "x10b@a.com", "gold"]
+ ]
+}

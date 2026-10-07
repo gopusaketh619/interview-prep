@@ -1,0 +1,7 @@
+{
+ "columns": ["customer_id", "total_spend"],
+ "rows": [
+  [4, 4150.0],
+  [3, 2600.0]
+ ]
+}

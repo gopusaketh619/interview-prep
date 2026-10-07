@@ -1,0 +1,11 @@
+{
+ "columns": ["product_id", "store", "price"],
+ "rows": [
+  [0, "store1", 95],
+  [1, "store1", 70],
+  [0, "store2", 100],
+  [0, "store3", 105],
+  [1, "store3", 80],
+  [2, "store3", 60]
+ ]
+}

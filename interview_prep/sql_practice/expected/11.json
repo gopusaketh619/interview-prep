@@ -1,0 +1,15 @@
+{
+ "columns": ["dept_name", "employee", "salary"],
+ "rows": [
+  ["Marketing", "Ken", 95000],
+  ["Marketing", "Leo", 95000],
+  ["Legal", "Mia", 130000],
+  ["Engineering", "Alice", 250000],
+  ["Engineering", "Bob", 180000],
+  ["Engineering", "Carol", 150000],
+  ["Engineering", "Dan", 150000],
+  ["Sales", "Grace", 160000],
+  ["Sales", "Ivan", 100000],
+  ["Sales", "Heidi", 90000]
+ ]
+}

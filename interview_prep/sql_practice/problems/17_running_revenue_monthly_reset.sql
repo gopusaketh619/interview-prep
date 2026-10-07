@@ -1,0 +1,21 @@
+-- =============================================================================
+-- 17. Running revenue that resets each month                   Difficulty: Medium
+-- Topic: Window aggregates                    Inspired by: common running-total question
+-- Tables: orders, order_items                 Schema: python3 run.py --schema ecommerce
+-- =============================================================================
+-- For every order placed by a known customer, return the order's revenue, the customer's
+-- all-time running revenue, and the customer's running revenue within the calendar month
+-- (which restarts at the first order of each month).
+--
+-- Clarifications:
+--   * order_revenue = SUM(quantity * unit_price) for the order. Ignore guest orders.
+--   * Running totals accumulate in order_date order, ties broken by order_id.
+--
+-- Output columns: customer_id, order_id, order_date, order_revenue, running_total,
+--                 running_month_total
+-- Row order: customer_id, order_date, order_id
+-- Check: python3 run.py 17
+-- =============================================================================
+
+-- YOUR SQL BELOW
+

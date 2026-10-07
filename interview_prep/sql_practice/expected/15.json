@@ -1,0 +1,7 @@
+{
+ "columns": ["dept_name", "employee", "rank_2024", "rank_2025"],
+ "rows": [
+  ["Engineering", "Eve", 1, 3],
+  ["Sales", "Judy", 2, 4]
+ ]
+}

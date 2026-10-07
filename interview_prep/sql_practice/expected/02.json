@@ -1,0 +1,10 @@
+{
+ "columns": ["dept_name", "second_highest_salary"],
+ "rows": [
+  ["Marketing", null],
+  ["Legal", null],
+  ["Engineering", 180000],
+  ["Research", null],
+  ["Sales", 100000]
+ ]
+}

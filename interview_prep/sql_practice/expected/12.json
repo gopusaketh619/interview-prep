@@ -1,0 +1,18 @@
+{
+ "columns": ["month", "category", "product", "total_quantity"],
+ "rows": [
+  ["2025-01", "Electronics", "Headphones", 3],
+  ["2025-02", "Books", "Novel", 1],
+  ["2025-02", "Books", "Cookbook", 1],
+  ["2025-03", "Books", "Novel", 3],
+  ["2025-03", "Electronics", "Phone", 2],
+  ["2025-03", "Electronics", "Headphones", 2],
+  ["2025-04", "Furniture", "Lamp", 1],
+  ["2025-03", "Furniture", "Lamp", 3],
+  ["2025-02", "Furniture", "Chair", 3],
+  ["2025-02", "Furniture", "Desk", 3],
+  ["2025-01", "Books", "Novel", 2],
+  ["2025-02", "Electronics", "Headphones", 2],
+  ["2025-04", "Electronics", "Headphones", 2]
+ ]
+}

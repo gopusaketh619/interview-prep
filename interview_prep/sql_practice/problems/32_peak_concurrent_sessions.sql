@@ -1,0 +1,21 @@
+-- =============================================================================
+-- 32. Peak concurrent sessions                                 Difficulty: Hard
+-- Topic: Event analytics (sweep line)         Inspired by: Netflix / Zoom "max concurrent streams",
+--                                             LeetCode 253 "Meeting Rooms II" in SQL
+-- Tables: user_sessions                       Schema: python3 run.py --schema misc
+-- =============================================================================
+-- Find the maximum number of sessions that were live at the same moment, and the earliest time
+-- that maximum was reached. (This is also the minimum number of rooms needed if each session
+-- were a meeting.)
+--
+-- Clarifications:
+--   * end_ts is exclusive: a session ending at 11:00 is not live at 11:00, so it does not overlap
+--     a session starting at 11:00.
+--
+-- Output columns: peak_concurrent, peak_start_ts
+-- Row order: any (single row)
+-- Check: python3 run.py 32
+-- =============================================================================
+
+-- YOUR SQL BELOW
+

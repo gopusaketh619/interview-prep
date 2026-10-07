@@ -1,0 +1,22 @@
+-- =============================================================================
+-- 35. DAU/MAU stickiness                                       Difficulty: Medium
+-- Topic: Retention / engagement               Inspired by: Meta / Snap "DAU over MAU" metric questions
+-- Tables: logins                              Schema: python3 run.py --schema events
+-- =============================================================================
+-- For each month, report the average daily active users, the monthly active users, and the
+-- stickiness ratio (avg DAU / MAU) as a percentage.
+--
+-- Clarifications:
+--   * avg_dau = (number of distinct (user, day) pairs in the month) / (number of calendar days in
+--     that month). Days with no logins count as 0 DAU.
+--   * mau = distinct users with at least one login that month.
+--   * stickiness_pct = 100 * avg_dau / mau, computed from the unrounded avg_dau.
+--   * Round avg_dau and stickiness_pct to 2 decimals. month is 'YYYY-MM'.
+--
+-- Output columns: month, avg_dau, mau, stickiness_pct
+-- Row order: month ascending
+-- Check: python3 run.py 35
+-- =============================================================================
+
+-- YOUR SQL BELOW
+

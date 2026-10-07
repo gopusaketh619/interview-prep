@@ -1,0 +1,21 @@
+-- =============================================================================
+-- 34. Cohort retention matrix                                  Difficulty: Hard
+-- Topic: Retention                            Inspired by: Amplitude / Mixpanel cohort tables, Meta and Spotify DE interviews
+-- Tables: users, logins                       Schema: python3 run.py --schema events
+-- =============================================================================
+-- Group users into cohorts by signup month. For each cohort and each month_number (0 = the signup
+-- month, 1 = the month after, ...), report how many cohort members were active and what
+-- percentage of the cohort that is.
+--
+-- Clarifications:
+--   * cohort_size counts every user who signed up that month, including users who never logged in.
+--   * Only return (cohort, month_number) cells with at least one active user.
+--   * cohort_month is a 'YYYY-MM' string. Round retention_pct to 2 decimals.
+--
+-- Output columns: cohort_month, month_number, active_users, cohort_size, retention_pct
+-- Row order: any
+-- Check: python3 run.py 34
+-- =============================================================================
+
+-- YOUR SQL BELOW
+

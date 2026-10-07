@@ -1,0 +1,24 @@
+-- =============================================================================
+-- 48. One-query data quality report                            Difficulty: Medium
+-- Topic: Data engineering (data quality)      Inspired by: dbt tests / Great Expectations, asked in most DE loops
+-- Tables: dq_customers, dq_orders             Schema: python3 run.py --schema quality
+-- =============================================================================
+-- Write a single query that returns one row per data quality check with the number of failures:
+--
+--   check_name               failed_count means
+--   duplicate_customer_id    number of customer_id values that appear more than once in dq_customers
+--   null_customer_email      number of dq_customers rows with a NULL email
+--   orphan_order_customer    number of dq_orders rows whose non-NULL customer_id is not in dq_customers
+--   null_order_customer      number of dq_orders rows with a NULL customer_id
+--   negative_order_amount    number of dq_orders rows with amount < 0
+--
+-- Clarifications:
+--   * Every check must appear in the output, even when it has 0 failures.
+--
+-- Output columns: check_name, failed_count
+-- Row order: any
+-- Check: python3 run.py 48
+-- =============================================================================
+
+-- YOUR SQL BELOW
+

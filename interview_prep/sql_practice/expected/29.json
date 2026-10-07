@@ -1,0 +1,8 @@
+{
+ "columns": ["step_order", "step", "users"],
+ "rows": [
+  [1, "view", 5],
+  [2, "add_to_cart", 3],
+  [3, "purchase", 2]
+ ]
+}

@@ -1,0 +1,6 @@
+{
+ "columns": ["peak_concurrent", "peak_start_ts"],
+ "rows": [
+  [3, "2025-05-01 10:45:00"]
+ ]
+}

@@ -1,0 +1,23 @@
+-- =============================================================================
+-- 36. Growth accounting: new, retained, resurrected, churned    Difficulty: Hard
+-- Topic: Retention and growth                 Inspired by: Meta / Duolingo "growth accounting" framework
+-- Tables: logins                              Schema: python3 run.py --schema events
+-- =============================================================================
+-- A user is active in a month if they logged in that month. For every month in the data, classify
+-- users and count them:
+--   * new          active this month, and this is their first active month ever
+--   * retained     active this month and last month
+--   * resurrected  active this month, not last month, but active at some earlier month
+--   * churned      active last month but not this month (counted in the month they went missing)
+--
+-- Clarifications:
+--   * "Months in the data" = every month that has at least one login (Jan through Apr 2025).
+--   * Omit (month, status) combinations with zero users. month is 'YYYY-MM'.
+--
+-- Output columns: month, status, users
+-- Row order: any
+-- Check: python3 run.py 36
+-- =============================================================================
+
+-- YOUR SQL BELOW
+

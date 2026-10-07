@@ -1,0 +1,21 @@
+-- =============================================================================
+-- 29. Ordered conversion funnel within 7 days                  Difficulty: Hard
+-- Topic: Event analytics (funnels)            Inspired by: Airbnb / Amazon funnel questions
+-- Tables: events                              Schema: python3 run.py --schema events
+-- =============================================================================
+-- Build a 3-step funnel: view -> add_to_cart -> purchase. Count the distinct users who reach each
+-- step, where the steps must happen in order and within 7 days of the view that started them.
+--
+-- Clarifications:
+--   * Step 1: the user has at least one 'view'.
+--   * Step 2: an 'add_to_cart' strictly after some view, and at most 7 days after that view.
+--   * Step 3: a 'purchase' strictly after that cart event, and at most 7 days after the same view.
+--   * A cart or purchase that happens before any view does not count.
+--
+-- Output columns: step_order, step, users
+-- Row order: step_order ascending
+-- Check: python3 run.py 29
+-- =============================================================================
+
+-- YOUR SQL BELOW
+

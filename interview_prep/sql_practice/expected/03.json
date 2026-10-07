@@ -1,0 +1,10 @@
+{
+ "columns": ["product_a", "product_b", "orders_together"],
+ "rows": [
+  ["Laptop", "Headphones", 4],
+  ["Phone", "Headphones", 3],
+  ["Laptop", "Phone", 2],
+  ["Desk", "Chair", 2],
+  ["Novel", "Cookbook", 2]
+ ]
+}

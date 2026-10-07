@@ -1,0 +1,21 @@
+-- =============================================================================
+-- 47. Point-in-time FX conversion (as-of join)                 Difficulty: Hard
+-- Topic: Data engineering (as-of / point-in-time joins)  Inspired by: Stripe / Robinhood / fintech DE interviews
+-- Tables: intl_orders, fx_rates               Schema: python3 run.py --schema ecommerce
+-- =============================================================================
+-- Convert every international order to USD using the exchange rate that was in effect at the
+-- moment the order was placed.
+--
+-- Clarifications:
+--   * The rate in effect is the latest fx_rates row for the same currency with
+--     effective_ts <= order_ts (a rate is in effect from its effective_ts onward).
+--   * If no rate was in effect yet, keep the order with NULL rate_to_usd and NULL amount_usd.
+--   * amount_usd = amount * rate_to_usd, rounded to 2 decimals.
+--
+-- Output columns: order_id, currency, amount, rate_to_usd, amount_usd
+-- Row order: any
+-- Check: python3 run.py 47
+-- =============================================================================
+
+-- YOUR SQL BELOW
+

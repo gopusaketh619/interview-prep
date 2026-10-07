@@ -1,0 +1,8 @@
+{
+ "columns": ["id", "jan_revenue", "feb_revenue", "mar_revenue", "apr_revenue"],
+ "rows": [
+  [1, 8000, 7000, 6000, null],
+  [2, 9000, null, null, 4000],
+  [3, null, 10000, null, 2500]
+ ]
+}
