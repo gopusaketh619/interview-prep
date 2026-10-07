@@ -2,7 +2,7 @@
 
 Questions and model answers targeted at a role owning Snowflake administration, access governance, vendor tooling (Fivetran, Airflow/Astronomer, Hex), warehouse cost, and CDC/streaming ingestion.
 
-General Kafka/Snowflake fundamentals are in [data_engineering_kafka_snowflake.md](data_engineering_kafka_snowflake.md).
+General Kafka/Snowflake fundamentals are in [data_engineering_kafka_snowflake.md](kafka_snowflake.md).
 
 ---
 

@@ -16,10 +16,10 @@ If this guide has been helpful to you please share it with others and react to t
 
 ### Exam List
 
-- [Practice Test - 1](./practice-test-1.md)
-- [Practice Test - 2](./practice-test-2.md)
-- [Practice Test - 3](./practice-test-3.md)
-- [Practice Test - 4](./practice-test-4.md)
-- [Practice Test - 5](./practice-test-5.md)
-- [Practice Test - 6](./practice-test-6.md)
-- [Practice Test - 7](./practice-test-7.md)
+- [Practice Test - 1](./01_practice_test.md)
+- [Practice Test - 2](./02_practice_test.md)
+- [Practice Test - 3](./03_practice_test.md)
+- [Practice Test - 4](./04_practice_test.md)
+- [Practice Test - 5](./05_practice_test.md)
+- [Practice Test - 6](./06_practice_test.md)
+- [Practice Test - 7](./07_practice_test.md)

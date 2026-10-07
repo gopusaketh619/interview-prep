@@ -147,13 +147,13 @@ When values are in range [1, N] and the interviewer wants O(1) space, use the ar
 
 **Essential Questions:**
 - [Two Sum](../topics/hash_table/01_two_sum.py)
-- [Best Time to Buy and Sell Stock](../topics/array/sorting/03_buy_sell_stock.py)
+- [Best Time to Buy and Sell Stock](../topics/array/sliding_window/12_buy_sell_stock.py)
 - [Product of Array Except Self](../topics/array/prefix_sum/01_product_except_self.py)
-- [Maximum Subarray](../topics/array/prefix_sum/03_maximum_subarray.py)
+- [Maximum Subarray](../topics/dynamic_programming/15_maximum_subarray.py)
 
 **Recommended Practice Questions:**
-- [Contains Duplicate](../topics/array/sorting/04_contains_duplicate.py)
-- [Maximum Product Subarray](../topics/array/prefix_sum/04_maximum_product_subarray.py)
+- [Contains Duplicate](../topics/hash_table/09_contains_duplicate.py)
+- [Maximum Product Subarray](../topics/dynamic_programming/16_maximum_product_subarray.py)
 - [Search in Rotated Sorted Array](../topics/array/binary_search/02_search_rotated_sorted.py)
 - [3Sum](../topics/array/two_pointers/02_three_sum.py)
 - [Container With Most Water](../topics/array/two_pointers/03_container_with_most_water.py)
@@ -403,7 +403,7 @@ Track what you've visited to avoid revisiting.
 **Recommended Practice Questions:**
 - [Group Anagrams](../topics/string/04_group_anagrams.py)
 - [Insert Delete GetRandom O(1)](../topics/hash_table/05_insert_delete_getrandom.py)
-- [First Missing Positive](../topics/array/binary_search/04_first_missing_positive.py)
+- [First Missing Positive](../topics/hash_table/08_first_missing_positive.py)
 - [LRU Cache](../topics/hash_table/06_lru_cache.py)
 - [All O`one Data Structure](../topics/hash_table/07_all_o_one.py)
 
@@ -520,7 +520,7 @@ for i in range(start, len(candidates)):
 
 ### The 6 Backtracking Templates
 
-All backtracking = 3 templates × with/without duplicates. Full code in [recursion_template.py](../topics/recursion/recursion_template.py).
+All backtracking = 3 templates × with/without duplicates. Full code in [recursion/recursion_template.py](../topics/recursion/recursion_template.py).
 
 **Template Decision Flowchart:**
 
@@ -734,11 +734,11 @@ found = i < len(arr) and arr[i] == target
 - [Search in Rotated Sorted Array](../topics/array/binary_search/02_search_rotated_sorted.py)
 
 **Recommended Practice Questions:**
-- [Kth Smallest Element in a Sorted Matrix](../topics/array/binary_search/05_kth_smallest_sorted_matrix.py)
-- [Search a 2D Matrix](../topics/array/binary_search/06_search_2d_matrix.py)
-- [Kth Largest Element in an Array](../topics/array/binary_search/07_kth_largest_element.py)
-- [Find Minimum in Rotated Sorted Array](../topics/array/binary_search/08_find_min_rotated_sorted.py)
-- [Median of Two Sorted Arrays](../topics/array/binary_search/09_median_two_sorted_arrays.py)
+- [Kth Smallest Element in a Sorted Matrix](../topics/array/binary_search/03_kth_smallest_sorted_matrix.py)
+- [Search a 2D Matrix](../topics/array/binary_search/04_search_2d_matrix.py)
+- [Kth Largest Element in an Array](../topics/heap/05_kth_largest_element.py)
+- [Find Minimum in Rotated Sorted Array](../topics/array/binary_search/05_find_min_rotated_sorted.py)
+- [Median of Two Sorted Arrays](../topics/array/binary_search/06_median_two_sorted_arrays.py)
 
 **Further Reading:**
 - [Binary Search 101](https://leetcode.com/problems/binary-search/solutions/423162/binary-search-101/) — the definitive LeetCode post
@@ -1716,11 +1716,11 @@ Push the head of each list into a min-heap. Pop the smallest, advance that list,
 | "Continuously find min/max" | Heap |
 
 **Essential Questions:**
-- [Merge K Sorted Lists](../topics/heap/04_merge_k_sorted_lists.py)
+- [Merge K Sorted Lists](../topics/linked_list/05_merge_k_sorted_lists.py)
 - [K Closest Points to Origin](../topics/heap/01_k_closest_points.py)
 
 **Recommended Practice Questions:**
-- [Top K Frequent Elements](../topics/heap/05_top_k_frequent_elements.py)
+- [Top K Frequent Elements](../topics/heap/04_top_k_frequent_elements.py)
 - [Find Median from Data Stream](../topics/heap/02_find_median_data_stream.py)
 
 **Further Reading:**
@@ -1927,7 +1927,7 @@ When you need "max number of overlapping intervals" (e.g. meeting rooms), use ev
 - [Insert Interval](../topics/interval/02_insert_interval.py)
 
 **Recommended Practice Questions:**
-- [Non-overlapping Intervals](../topics/array/sorting/02_non_overlapping_intervals.py)
+- [Non-overlapping Intervals](../topics/interval/03_non_overlapping_intervals.py)
 
 ---
 

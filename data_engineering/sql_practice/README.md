@@ -9,7 +9,7 @@ Problems are modeled on LeetCode SQL 50 / Top SQL, DataLemur, StrataScratch, and
 ## Setup
 
 ```bash
-cd interview_prep/sql_practice
+cd data_engineering/sql_practice
 python3 -m pip install -r requirements.txt   # duckdb + pytest
 ```
 

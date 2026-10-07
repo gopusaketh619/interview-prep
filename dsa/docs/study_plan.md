@@ -40,7 +40,7 @@ Study each topic's patterns and templates before solving problems.
 | 1 | Two Sum | [hash_table/01_two_sum.py](../topics/hash_table/01_two_sum.py) |
 | 2 | Valid Parentheses | [stack/01_valid_parentheses.py](../topics/stack/01_valid_parentheses.py) |
 | 3 | Merge Two Sorted Lists | [linked_list/03_merge_two_sorted_lists.py](../topics/linked_list/03_merge_two_sorted_lists.py) |
-| 4 | Best Time to Buy and Sell Stock | [array/sorting/03_buy_sell_stock.py](../topics/array/sorting/03_buy_sell_stock.py) |
+| 4 | Best Time to Buy and Sell Stock | [array/sliding_window/12_buy_sell_stock.py](../topics/array/sliding_window/12_buy_sell_stock.py) |
 | 5 | Valid Palindrome | [string/01_valid_palindrome.py](../topics/string/01_valid_palindrome.py) |
 | 6 | Invert Binary Tree | [tree/02_invert_binary_tree.py](../topics/tree/02_invert_binary_tree.py) |
 | 7 | Valid Anagram | [string/02_valid_anagram.py](../topics/string/02_valid_anagram.py) |
@@ -50,24 +50,24 @@ Study each topic's patterns and templates before solving problems.
 | 11 | Balanced Binary Tree | [tree/03_balanced_binary_tree.py](../topics/tree/03_balanced_binary_tree.py) |
 | 12 | Linked List Cycle | [linked_list/02_linked_list_cycle.py](../topics/linked_list/02_linked_list_cycle.py) |
 | 13 | Implement Queue using Stacks | [queue/01_implement_queue_using_stacks.py](../topics/queue/01_implement_queue_using_stacks.py) |
-| 14 | First Bad Version | [array/binary_search/10_first_bad_version.py](../topics/array/binary_search/10_first_bad_version.py) |
+| 14 | First Bad Version | [array/binary_search/07_first_bad_version.py](../topics/array/binary_search/07_first_bad_version.py) |
 | 15 | Ransom Note | [hash_table/02_ransom_note.py](../topics/hash_table/02_ransom_note.py) |
 | 16 | Climbing Stairs | [dynamic_programming/01_climbing_stairs.py](../topics/dynamic_programming/01_climbing_stairs.py) |
 | 17 | Longest Palindrome | [hash_table/03_longest_palindrome.py](../topics/hash_table/03_longest_palindrome.py) |
 | 18 | Reverse Linked List | [linked_list/01_reverse_linked_list.py](../topics/linked_list/01_reverse_linked_list.py) |
-| 19 | Majority Element | [array/sorting/04_contains_duplicate.py](../topics/array/sorting/04_contains_duplicate.py) |
+| 19 | Majority Element | [hash_table/09_contains_duplicate.py](../topics/hash_table/09_contains_duplicate.py) |
 | 20 | Add Binary | [binary_and_math/01_add_binary.py](../topics/binary_and_math/01_add_binary.py) |
 | 21 | Diameter of Binary Tree | [tree/15_diameter_of_binary_tree.py](../topics/tree/15_diameter_of_binary_tree.py) |
 | 22 | Middle of the Linked List | [linked_list/04_middle_of_linked_list.py](../topics/linked_list/04_middle_of_linked_list.py) |
 | 23 | Maximum Depth of Binary Tree | [tree/01_max_depth_binary_tree.py](../topics/tree/01_max_depth_binary_tree.py) |
-| 24 | Contains Duplicate | [array/sorting/04_contains_duplicate.py](../topics/array/sorting/04_contains_duplicate.py) |
+| 24 | Contains Duplicate | [hash_table/09_contains_duplicate.py](../topics/hash_table/09_contains_duplicate.py) |
 
 ### Medium
 
 | # | Problem | Repo File |
 |---|---------|-----------|
 | 1 | Min Stack | [stack/02_min_stack.py](../topics/stack/02_min_stack.py) |
-| 2 | Maximum Subarray | [array/prefix_sum/03_maximum_subarray.py](../topics/array/prefix_sum/03_maximum_subarray.py) |
+| 2 | Maximum Subarray | [dynamic_programming/15_maximum_subarray.py](../topics/dynamic_programming/15_maximum_subarray.py) |
 | 3 | Insert Interval | [interval/02_insert_interval.py](../topics/interval/02_insert_interval.py) |
 | 4 | 01 Matrix | [matrix/02_01_matrix.py](../topics/matrix/02_01_matrix.py) |
 | 5 | K Closest Points to Origin | [heap/01_k_closest_points.py](../topics/heap/01_k_closest_points.py) |
@@ -88,7 +88,7 @@ Study each topic's patterns and templates before solving problems.
 | 20 | Permutations | [recursion/02_permutations.py](../topics/recursion/02_permutations.py) |
 | 21 | Merge Intervals | [interval/01_merge_intervals.py](../topics/interval/01_merge_intervals.py) |
 | 22 | Lowest Common Ancestor of a Binary Tree | [tree/13_lowest_common_ancestor_bt.py](../topics/tree/13_lowest_common_ancestor_bt.py) |
-| 23 | Time Based Key-Value Store | [array/binary_search/11_time_based_kv_store.py](../topics/array/binary_search/11_time_based_kv_store.py) |
+| 23 | Time Based Key-Value Store | [array/binary_search/08_time_based_kv_store.py](../topics/array/binary_search/08_time_based_kv_store.py) |
 | 24 | Accounts Merge | [graph/06_accounts_merge.py](../topics/graph/06_accounts_merge.py) |
 | 25 | Sort Colors | [array/two_pointers/04_sort_colors.py](../topics/array/two_pointers/04_sort_colors.py) |
 | 26 | Word Break | [dynamic_programming/03_word_break.py](../topics/dynamic_programming/03_word_break.py) |

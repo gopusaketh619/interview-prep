@@ -15,9 +15,15 @@
 # Examples:
 #   Input:  intervals = [[1,3],[2,6],[8,10],[15,18]]
 #   Output: [[1,6],[8,10],[15,18]]
+#   Explanation: [1,3] and [2,6] overlap → merge to [1,6]
 #
 #   Input:  intervals = [[1,4],[4,5]]
 #   Output: [[1,5]]
+#
+#   Input:  intervals = [[1,4],[0,4]]
+#   Output: [[0,4]]
+#
+# Hint: Sort by start time, then iterate and merge overlaps.
 # ============================================================
 
 def merge(intervals):
@@ -34,5 +40,7 @@ def merge(intervals):
 assert merge([[1,3],[2,6],[8,10],[15,18]]) == [[1,6],[8,10],[15,18]]
 assert merge([[1,4],[4,5]]) == [[1,5]]
 assert merge([[1,4],[0,4]]) == [[0,4]]
+assert merge([[1,4],[2,3]]) == [[1,4]]
 assert merge([[1,4]]) == [[1,4]]
+assert merge([[1,2]]) == [[1,2]]
 print("All test cases passed!")

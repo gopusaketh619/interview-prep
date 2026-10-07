@@ -1,8 +1,8 @@
 """pytest entry point.
 
-    pytest interview_prep/sql_practice              your attempts (unattempted problems are skipped)
-    pytest interview_prep/sql_practice -k 24        a single problem
-    SQL_SOLUTIONS=1 pytest interview_prep/sql_practice    verify the reference solutions instead
+    pytest data_engineering/sql_practice              your attempts (unattempted problems are skipped)
+    pytest data_engineering/sql_practice -k 24        a single problem
+    SQL_SOLUTIONS=1 pytest data_engineering/sql_practice    verify the reference solutions instead
 """
 import os
 
