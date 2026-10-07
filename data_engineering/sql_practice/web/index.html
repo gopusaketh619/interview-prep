@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SQL Practice</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css"
+        integrity="sha384-zaeBlB/vwYsDRSlFajnDd7OydJ0cWk+c2OWybl3eSUf6hW2EbhlCsQPqKr3gkznT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.css"
+        integrity="sha384-TU/qRI67N04B589luYdn1ZMRIGgJic3GB1WsvLJTRh92VO26vpxI4dCKiDtsR4fw" crossorigin="anonymous">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">SQL<span>Practice</span></div>
+    <div class="progress" title="Problems whose saved answer passes">
+      <div class="progress-track"><div id="progress-fill"></div></div>
+      <span id="progress-text">0 / 50 solved</span>
+    </div>
+    <div class="topbar-right">
+      <div class="random">
+        <select id="random-level" aria-label="Random problem difficulty">
+          <option value="any">Any</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+        <button id="random-btn" class="btn ghost" title="Open a random unsolved problem">Random unsolved</button>
+      </div>
+      <button id="timer" class="timer" title="Click to start or pause. Double-click to reset.">
+        <span id="timer-text">00:00</span><span id="timer-target"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="layout" id="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="filters">
+        <input id="search" type="search" placeholder="Search problems" autocomplete="off">
+        <div class="filter-row">
+          <select id="filter-difficulty" aria-label="Difficulty">
+            <option value="">All levels</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+          <select id="filter-status" aria-label="Status">
+            <option value="">All status</option>
+            <option value="PASS">Solved</option>
+            <option value="unsolved">Unsolved</option>
+            <option value="TODO">Not started</option>
+          </select>
+        </div>
+      </div>
+      <nav id="problem-list" class="problem-list"></nav>
+    </aside>
+
+    <main class="pane problem-pane">
+      <div class="tabs" data-tabs="left">
+        <button class="tab active" data-tab="description">Description</button>
+        <button class="tab" data-tab="schema">Schema &amp; data</button>
+        <button class="tab" data-tab="solution">Solution</button>
+      </div>
+      <div class="tab-body" id="tab-description"></div>
+      <div class="tab-body hidden" id="tab-schema"></div>
+      <div class="tab-body hidden" id="tab-solution"></div>
+    </main>
+
+    <div class="gutter gutter-col" id="gutter-col" title="Drag to resize"></div>
+
+    <section class="pane workspace" id="workspace">
+      <div class="editor-bar">
+        <span class="editor-label">DuckDB SQL</span>
+        <span id="save-state" class="save-state"></span>
+        <div class="editor-actions">
+          <button id="reset-btn" class="btn ghost" title="Clear your answer for this problem">Reset</button>
+          <button id="run-btn" class="btn" title="Run (Cmd/Ctrl + Enter). Runs the selection if text is selected.">&#9654; Run</button>
+          <button id="submit-btn" class="btn primary" title="Submit (Cmd/Ctrl + Shift + Enter)">Submit</button>
+        </div>
+      </div>
+      <div class="editor-wrap" id="editor-wrap"><textarea id="editor" spellcheck="false"></textarea></div>
+      <div class="gutter gutter-row" id="gutter-row" title="Drag to resize"></div>
+      <div class="output" id="output">
+        <div class="tabs" data-tabs="right">
+          <button class="tab active" data-tab="result">Result</button>
+          <button class="tab" data-tab="submission">Submission</button>
+          <span class="tabs-hint">Cmd/Ctrl+Enter run &middot; +Shift submit &middot; Ctrl+Space autocomplete</span>
+        </div>
+        <div class="tab-body" id="tab-result"><p class="muted">Run a query to see its output here.</p></div>
+        <div class="tab-body hidden" id="tab-submission"><p class="muted">Submit to check your answer against the expected output.</p></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"
+          integrity="sha384-ZYmwuq4n2gOcNxMSiJ6jyTj+BbIrilr7p6dlq6q5nmSWKmsH9UU4K1qqjycMkfmR" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/sql/sql.min.js"
+          integrity="sha384-HxXmA1hLc56V6Ja4yfcCwAprmbnS4tuvKYS0qKG3t6oxOFMflcnYq5fOnt6wVCda" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.js"
+          integrity="sha384-qCnKPgNYgVO8RO19jShRRAfU75+KVnN1cQy+8CPX/TTwJsUEJ/EpnwKx2UOyLx8c" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/sql-hint.min.js"
+          integrity="sha384-x2NdW32on8wdeZesJC5KUk9Mb4RWo/H9mPCdwE2LyOlUOnU82Moona+nYiLbyRdO" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"
+          integrity="sha384-LjCI3E8qhhxXZvu7+FCvqx9eZYSowFvuJ7z54KsgI/BDPGKEuysqCg/vYiKHvC4Y" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"
+          integrity="sha384-69mJoUoPPF/C7qPs6lLjvXvrt6w225+rmxWqGO3a1glVjITdnnwPQOtG9FRTd2Ni" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/comment/comment.min.js"
+          integrity="sha384-B6Af6BES5glvxvAPc9Vrl9t1lHx1k3iL8AcT1XmsmlEVZudSW8E+8CA1TxVbdQbj" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/selection/active-line.min.js"
+          integrity="sha384-hcxaXyAtJ30s2NeDu1OHWsQRiHiWuYLTbI596+YFb+f2pFhzO0mDuahZziRPPDxg" crossorigin="anonymous"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

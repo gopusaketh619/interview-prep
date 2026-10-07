@@ -8,16 +8,37 @@ Problems are modeled on LeetCode SQL 50 / Top SQL, DataLemur, StrataScratch, and
 
 ## Setup
 
+Everything runs in one virtual environment at the repo root (`.venv/`, git-ignored).
+
 ```bash
 cd data_engineering/sql_practice
-python3 -m pip install -r requirements.txt   # duckdb + pytest
+make setup                        # creates ../../.venv if missing, installs requirements.txt (duckdb + pytest)
+source ../../.venv/bin/activate   # then python3 / pytest below use the venv
 ```
 
-If you cannot install globally, `python3 -m pip install --target .deps duckdb` also works; `run.py` picks up `.deps/` automatically.
+Without activating, the `make` targets call the venv's Python directly: `make app`, `make all`, `make check N=24`, `make test`, `make solutions`. In Cursor, pick `.venv/bin/python` as the interpreter (Cmd+Shift+P, "Python: Select Interpreter").
 
 ---
 
-## Workflow
+## Browser UI (recommended)
+
+```bash
+python3 app.py          # or: make app. Opens http://127.0.0.1:8765
+```
+
+A local, LeetCode-style page: problem list with progress, the prompt, the schema with sample rows, a SQL editor with table and column autocomplete, Run (see your output), and Submit (graded, with missing and extra rows). Every Run and Submit uses a fresh in-memory copy of the data.
+
+- `Cmd/Ctrl+Enter` runs the query, or only the selected text. `Cmd/Ctrl+Shift+Enter` submits. `Ctrl+Space` autocompletes.
+- Your SQL autosaves to `problems/NN_slug.sql`, the same file the CLI reads, so `python3 run.py --all` shows the same progress.
+- The timer starts on your first keystroke (15 minutes for medium, 25 for hard). Click it to pause, double-click to reset.
+- The Solution tab stays locked until you pass or choose to reveal it.
+- Queries are cancelled after 10 seconds. The server only listens on localhost. Stop it with `Ctrl+C`; `--port 9000` picks another port.
+
+The editor loads from a CDN. Offline, the page falls back to a plain text box and everything else still works.
+
+---
+
+## Workflow (CLI)
 
 1. Pick a problem and read the prompt: `python3 run.py 24 --show`
 2. Look at the data: `python3 run.py --schema events`

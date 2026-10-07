@@ -16,7 +16,7 @@ dsa/
   docs/                 study guide, study plan, python tricks, complexity reference
   topics/               one folder per topic, numbered problems + *_template.py
 data_engineering/
-  sql_practice/         python3 run.py --all
+  sql_practice/         python3 app.py (browser UI) or python3 run.py --all
   guides/               interview guides (markdown)
 certifications/
   aws_ai_practitioner_aif_c01/
@@ -25,7 +25,12 @@ scratch/
 
 ## Quick start
 
+One virtual environment at the repo root serves everything. DSA files only need the standard library; the SQL suite needs `duckdb`.
+
 ```bash
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r data_engineering/sql_practice/requirements.txt
 python3 dsa/topics/array/sliding_window/01_max_average_subarray.py   # one DSA problem
-cd data_engineering/sql_practice && python3 run.py --all             # SQL progress board
+cd data_engineering/sql_practice && python3 app.py                   # SQL practice in the browser
+cd data_engineering/sql_practice && python3 run.py --all             # SQL progress board (CLI)
 ```

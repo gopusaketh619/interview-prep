@@ -22,11 +22,14 @@ from collections import Counter
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-LOCAL_DEPS = HERE / ".deps"
-if LOCAL_DEPS.is_dir():
-    sys.path.insert(0, str(LOCAL_DEPS))
 
-import duckdb  # noqa: E402
+try:
+    import duckdb
+except ImportError:
+    raise SystemExit("duckdb is not installed in this Python. Use the repo virtual environment:\n"
+                     "    source ../../.venv/bin/activate     (from data_engineering/sql_practice)\n"
+                     "or run through it directly: make app / make all / make test.\n"
+                     "First time? `make setup` creates the venv and installs requirements.txt.")
 
 from catalog import PROBLEMS, TOPICS, by_id  # noqa: E402
 
@@ -111,36 +114,65 @@ def to_json_value(value):
     return list(value) if isinstance(value, tuple) else value
 
 
-def compare(problem, rows):
-    """Return (ok, message) comparing actual rows against expected/NN.json."""
+def diff(problem, rows):
+    """Compare actual rows against expected/NN.json.
+
+    Returns a dict with ok, reason (None, "missing_expected", "columns", "order", or "rows"),
+    expected_columns, expected_count, got_count, missing, and extra.
+    """
     expected = read_expected(problem)
+    result = {"ok": False, "reason": None, "expected_columns": [], "expected_count": 0,
+              "got_count": len(rows), "missing": [], "extra": []}
     if expected is None:
-        return False, f"No expected/{problem.key}.json yet. Run --freeze {problem.id} after checking the solution."
+        result["reason"] = "missing_expected"
+        return result
     want = normalize_rows(expected["rows"])
     got = normalize_rows(rows)
+    result["expected_columns"] = expected["columns"]
+    result["expected_count"] = len(want)
 
     if got and want and len(got[0]) != len(want[0]):
-        return False, (f"Column count mismatch: expected {len(want[0])} columns "
-                       f"({', '.join(expected['columns'])}), got {len(got[0])}.")
+        result["reason"] = "columns"
+        return result
 
     if problem.ordered:
         if got == want:
-            return True, "PASS"
+            result["ok"] = True
+            return result
         if Counter(got) == Counter(want):
-            return False, "Right rows, wrong order. This problem requires a specific ORDER BY."
+            result["reason"] = "order"
+            return result
     elif Counter(got) == Counter(want):
-        return True, "PASS"
+        result["ok"] = True
+        return result
 
-    missing = list((Counter(want) - Counter(got)).elements())
-    extra = list((Counter(got) - Counter(want)).elements())
-    lines = [f"Expected {len(want)} rows, got {len(got)}."]
-    if missing:
+    result["reason"] = "rows"
+    result["missing"] = list((Counter(want) - Counter(got)).elements())
+    result["extra"] = list((Counter(got) - Counter(want)).elements())
+    return result
+
+
+def compare(problem, rows):
+    """Return (ok, message) comparing actual rows against expected/NN.json."""
+    d = diff(problem, rows)
+    if d["ok"]:
+        return True, "PASS"
+    if d["reason"] == "missing_expected":
+        return False, f"No expected/{problem.key}.json yet. Run --freeze {problem.id} after checking the solution."
+    if d["reason"] == "columns":
+        return False, (f"Column count mismatch: expected {len(d['expected_columns'])} columns "
+                       f"({', '.join(d['expected_columns'])}), got {len(rows[0])}.")
+    if d["reason"] == "order":
+        return False, "Right rows, wrong order. This problem requires a specific ORDER BY."
+
+    lines = [f"Expected {d['expected_count']} rows, got {d['got_count']}."]
+    if d["missing"]:
         lines.append("Missing rows (expected but not returned):")
-        lines += [f"  - {r}" for r in missing]
-    if extra:
+        lines += [f"  - {r}" for r in d["missing"]]
+    if d["extra"]:
         lines.append("Extra rows (returned but not expected):")
-        lines += [f"  + {r}" for r in extra]
-    if problem.ordered and not missing and not extra:
+        lines += [f"  + {r}" for r in d["extra"]]
+    if problem.ordered and not d["missing"] and not d["extra"]:
         lines.append("Row order differs from the expected order.")
     return False, "\n".join(lines)
 

@@ -2,7 +2,7 @@
 
 | Resource | Description |
 |----------|-------------|
-| [SQL Practice Suite](sql_practice/README.md) | 50 medium/hard DE SQL problems with an in-memory DuckDB test runner |
+| [SQL Practice Suite](sql_practice/README.md) | 50 medium/hard DE SQL problems on in-memory DuckDB, with a browser UI (`python3 app.py`) and a CLI runner |
 | [Kafka & Snowflake Guide](guides/kafka_snowflake.md) | Technical and system design questions on streaming and warehousing |
 | [Data Platform & Governance Prep](guides/platform_governance.md) | Snowflake admin, RBAC/PII governance, Fivetran/Airflow/Hex, CDC cutovers |
 
